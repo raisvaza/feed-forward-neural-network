@@ -1,0 +1,19 @@
+{
+    "jumlah_input": 3,
+    "hidden_layers": {
+        "jumlah": 3,
+        "layers": [{
+            "jumlah_neuron": 3,
+            "fungsi_aktivasi": "ReLu",
+            "bobot": [1,2,3,4]
+        },{
+            "jumlah_neuron": 2,
+            "fungsi_aktivasi": "Linear",
+            "bobot": [1,2,3]
+        },{
+            "jumlah_neuron": 4,
+            "fungsi_aktivasi": "LogReg",
+            "bobot": [1,2,3,4,5]
+        }]
+    }
+}
