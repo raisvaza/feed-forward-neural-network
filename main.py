@@ -48,28 +48,41 @@ def calculateLayerOutput(layer, input_array):
         for i in range(neuron_amount):
             neuron_weight = layer_neurons[i]["weight"]
             temp = calculateNeuronOutputPreActivation(input_array, neuron_weight)
+            print("pre-linear: ", temp)
             temp = linear(temp)
+            print("post-sigmoid: ", temp)
             output_array.append(temp)
     elif(activation_type == 'ReLU'):
         for i in range(neuron_amount):
             neuron_weight = layer_neurons[i]["weight"]
             temp = calculateNeuronOutputPreActivation(input_array, neuron_weight)
+            print("pre-ReLU: ", temp)
             temp = relu(temp)
+            print("pre-ReLU: ", temp)
             output_array.append(temp)
     elif(activation_type == 'Sigmoid'):
         for i in range(neuron_amount):
             neuron_weight = layer_neurons[i]["weight"]
             temp = calculateNeuronOutputPreActivation(input_array, neuron_weight)
-            # print("temp1: ", temp)
+            print("pre-sigmoid: ", temp)
             temp = sigmoid(temp)
-            # print("temp2: ", temp)
+            print("post-sigmoid: ", temp)
             output_array.append(temp)
     elif(activation_type == 'Softmax'):
+        temp_array = []
         for i in range(neuron_amount):
             neuron_weight = layer_neurons[i]["weight"]
             temp = calculateNeuronOutputPreActivation(input_array, neuron_weight)
-            temp = softmax(temp, input_array)
-            output_array.append(temp)
+            temp_array.append(temp)
+            # print("pre-softmax: ", temp)
+            # temp = softmax()
+        
+        output_array = softmax(temp_array)
+
+        # for i in temp_array:
+        #     temp = softmax(i,temp_array)
+        # print("post-softmax: ", temp)
+        # output_array.append(temp)
 
     print("Layer output: ", output_array)
     return output_array
@@ -129,5 +142,15 @@ def show_model(json_content):
     print("     Activation Type:", output_layer["activation_type"])
     print("     Bobot:", output_layer["weight"])
 
-print("Hasil prediksi: ", predict(x_input_layer, layers, output_layer))
-show_model(json_content)
+# print("Hasil prediksi: ", predict(x_input_layer, layers, output_layer))
+instance_array = [[100,200,300],[-200,-300,-400],[4,5,6],[5,6,7]]
+
+temp_array = []
+for i in range(len(instance_array)):
+    input_array = instance_array[i]
+    temp_array.append(predict(input_array, layers, output_layer))
+
+print(temp_array)
+    
+
+# show_model(json_content)

@@ -13,7 +13,7 @@
             ]
         },{
             "neuron_amount": 2,
-            "activation_type": "Linear",
+            "activation_type": "Sigmoid",
             "neurons": [
                 {"weight": [7,8,9,6]},
                 {"weight": [7,3,8,9]}

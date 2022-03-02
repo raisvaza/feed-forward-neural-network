@@ -1,6 +1,6 @@
 {
     "input_amount": 2,
-    "input_array": [0,1],
+    "input_array": [0,0],
     "hidden_layers": {
         "amount": 1,
         "layers": [{
