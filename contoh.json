@@ -1,0 +1,19 @@
+{
+    "input_amount": 2,
+    "input_array": [0,1],
+    "hidden_layers": {
+        "amount": 1,
+        "layers": [{
+            "neuron_amount": 2,
+            "activation_type": "Sigmoid",
+            "neurons": [
+                {"weight": [-10,20,20]},
+                {"weight": [30,-20,-20]}
+            ]
+        }]
+    },
+    "output_layer" : {
+        "weight": [-30,20,20],
+        "activation_type": "Sigmoid"
+    }
+}

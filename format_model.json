@@ -1,19 +1,36 @@
 {
-    "jumlah_input": 3,
+    "input_amount": 3,
+    "input_array": [5,4,7],
     "hidden_layers": {
-        "jumlah": 3,
+        "amount": 3,
         "layers": [{
-            "jumlah_neuron": 3,
-            "fungsi_aktivasi": "ReLu",
-            "bobot": [1,2,3,4]
+            "neuron_amount": 3,
+            "activation_type": "ReLU",
+            "neurons": [
+                {"weight": [1,2,3,2]},
+                {"weight": [-1,6,2,5]},
+                {"weight": [4,5,3,7]}
+            ]
         },{
-            "jumlah_neuron": 2,
-            "fungsi_aktivasi": "Linear",
-            "bobot": [1,2,3]
+            "neuron_amount": 2,
+            "activation_type": "Linear",
+            "neurons": [
+                {"weight": [7,8,9,6]},
+                {"weight": [7,3,8,9]}
+            ]
         },{
-            "jumlah_neuron": 4,
-            "fungsi_aktivasi": "LogReg",
-            "bobot": [1,2,3,4,5]
+            "neuron_amount": 4,
+            "activation_type": "Softmax",
+            "neurons": [
+                {"weight": [5,4,3]},
+                {"weight": [9,7,4]},
+                {"weight": [0,3,2]},
+                {"weight": [3,2,6]}
+            ]
         }]
+    },
+    "output_layer" : {
+        "weight": [1,2,3,7,8],
+        "activation_type": "Linear"
     }
 }
