@@ -145,12 +145,15 @@ def show_model(json_content):
 # print("Hasil prediksi: ", predict(x_input_layer, layers, output_layer))
 instance_array = [[100,200,300],[-200,-300,-400],[4,5,6],[5,6,7]]
 
-temp_array = []
-for i in range(len(instance_array)):
-    input_array = instance_array[i]
-    temp_array.append(predict(input_array, layers, output_layer))
 
-print(temp_array)
+def input(input_array, layers, output_layer):
+    temp_array = []
+    for i in range(len(instance_array)):
+        input_array = instance_array[i]
+        temp_array.append(predict(input_array, layers, output_layer))
+    return temp_array
+
+print(input(x_input_layer, layers, output_layer))
     
 
-# show_model(json_content)
+show_model(json_content)
